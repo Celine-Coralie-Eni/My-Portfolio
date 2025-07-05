@@ -1,0 +1,107 @@
+:root {
+  --bg: #fff;
+  --text: #222;
+  --primary: #007bff;
+  --card-bg: #f8f9fa;
+  --button-bg: linear-gradient(90deg, #007bff 0%, #00c6ff 100%);
+  --button-text: #fff;
+}
+
+body.light-theme {
+  --bg: #fff;
+  --text: #222;
+  --primary: #007bff;
+  --card-bg: #f8f9fa;
+  --button-bg: linear-gradient(90deg, #007bff 0%, #00c6ff 100%);
+  --button-text: #fff;
+}
+
+body.dark-theme {
+  --bg: #181a1b;
+  --text: #f1f1f1;
+  --primary: #00c6ff;
+  --card-bg: #23272b;
+  --button-bg: linear-gradient(90deg, #00c6ff 0%, #007bff 100%);
+  --button-text: #fff;
+}
+
+body,
+.App,
+.main-content {
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+.theme-toggle-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-left: 1.5rem;
+  transition: color 0.2s;
+  color: var(--primary);
+}
+
+.theme-toggle-btn:hover {
+  color: #ffb300;
+}
+
+/* Update other elements to use variables */
+.navbar {
+  background: var(--bg);
+  color: var(--text);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.navbar-logo {
+  color: var(--primary);
+}
+
+.navbar-links li a {
+  color: var(--text);
+}
+
+.navbar-links li a:hover {
+  color: var(--primary);
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

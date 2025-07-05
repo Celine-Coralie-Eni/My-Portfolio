@@ -1,0 +1,68 @@
+.about-section {
+  padding: 2.5rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.about-card {
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
+  border: 1.5px solid #f3f3f3;
+  padding: 2.5rem 2rem 2rem 2rem;
+  max-width: 540px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.about-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 1.2rem;
+}
+
+.about-bio {
+  font-size: 1.15rem;
+  color: #333;
+  margin-bottom: 1.1rem;
+  line-height: 1.6;
+}
+
+.about-bio-cont {
+  display: block;
+  margin-top: 0.4rem;
+  line-height: 1.4;
+  color: #444;
+}
+
+.about-skills-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.about-skills-list {
+  margin: 0 0 2.2rem 0;
+  padding-left: 1.2rem;
+  color: #444;
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+.about-contact-btn {
+  align-self: flex-end;
+  margin-top: 1.2rem;
+}
+
+@media (max-width: 600px) {
+  .about-card {
+    padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+  }
+  .about-title {
+    font-size: 1.3rem;
+  }
+}
