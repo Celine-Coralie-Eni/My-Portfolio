@@ -18,7 +18,7 @@
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: space-between;
   gap: 3rem;
   padding: 4rem 2rem;
   max-width: 1100px;
@@ -51,25 +51,46 @@
 
 .profile-card:hover {
   box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.16),
-    0 4px 16px 0 rgba(0, 0, 0, 0.13);
+    zoom in again then take the box of thhe ic a bit to the left 0 4px 16px 0
+      rgba(0, 0, 0, 0.13);
   transform: translateY(-2px) scale(1.02);
 }
 
 .profile-pic-wrapper {
+  position: relative;
   display: flex;
-  flex-direction: column;
+  justify-content: flex-end;
   align-items: center;
-  gap: 0.7rem;
+  margin-bottom: 2rem;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.profile-pic-ring {
+  width: 340px;
+  height: 400px;
+  border-radius: 50% / 45%;
+  background: linear-gradient(135deg, #00c6ff 0%, #007bff 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 32px 0 rgba(0, 123, 255, 0.18);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
 }
 
 .profile-pic {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50% / 45%;
   object-fit: cover;
+  object-position: center -80%;
+  background: #fff;
+  border: 8px solid #fff;
   box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.1);
-  background: #f3f3f3;
-  border: 3px solid #f9d423;
+  position: relative;
+  z-index: 2;
 }
 
 .profile-upload-btn {
@@ -224,4 +245,26 @@
 .contact-me-btn:hover::after,
 .contact-me-btn:focus::after {
   left: 120%;
+}
+
+.say-hello-btn {
+  margin-top: 1.2rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 2rem;
+  background: linear-gradient(90deg, #007bff 0%, #00c6ff 100%);
+  color: #fff;
+  box-shadow: 0 2px 8px 0 rgba(0, 123, 255, 0.1);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.15s;
+  letter-spacing: 0.03em;
+}
+
+.say-hello-btn:hover,
+.say-hello-btn:focus {
+  background: linear-gradient(90deg, #00c6ff 0%, #007bff 100%);
+  transform: scale(1.04) translateY(-2px);
+  box-shadow: 0 6px 24px 0 rgba(0, 123, 255, 0.16);
 }

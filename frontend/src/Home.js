@@ -29,36 +29,27 @@ function Home() {
   };
 
   return (
-    <section className="hero-fade-in home-hero-layout home-hero-reverse">
+    <section className="hero-fade-in home-hero-layout">
       <div className="home-main-col">
         <h1 className="home-h1">
           Hello!
           <br />
           I'm Celine-Coralie
         </h1>
-        <h2 className="home-h2">I'm a Software Developer</h2>
+        <h2 className="home-h2">Software Developer</h2>
         <p>
           💻 A systems-minded software engineer building secure, scalable web
           solutions with JavaScript, Rust, and containers.
         </p>
+        <button className="say-hello-btn" onClick={() => navigate("/contact")}>
+          Say Hello!
+        </button>
       </div>
       <div className="home-profile-col profile-card">
         <div className="profile-pic-wrapper">
-          <img
-            src={preview || "/default-profile.png"}
-            alt="Profile"
-            className="profile-pic"
-          />
-          <input
-            type="file"
-            accept="image/*"
-            id="profile-upload"
-            style={{ display: "none" }}
-            onChange={handlePicChange}
-          />
-          <label htmlFor="profile-upload" className="profile-upload-btn">
-            Upload Photo
-          </label>
+          <div className="profile-pic-ring">
+            <img src="/images/Ce.jpeg" alt="Profile" className="profile-pic" />
+          </div>
         </div>
         <div className="profile-socials">
           <span className="profile-socials-label">Check me on:</span>
