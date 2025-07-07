@@ -14,7 +14,10 @@ const pool = new Pool({
 
 app.post("/upload", upload.single("achievement"), async (req, res) => {
   const { originalname, filename, path } = req.file;
-  const { title, description } = req.body;
+  const { title, description, uploadPassword } = req.body;
+  if (!uploadPassword || uploadPassword !== process.env.UPLOAD_PASSWORD) {
+    return res.status(401).json({ error: "Unauthorized: Invalid password" });
+  }
   await pool.query(
     "INSERT INTO achievements (title, description, filename, originalname) VALUES ($1, $2, $3, $4)",
     [title, description, filename, originalname]

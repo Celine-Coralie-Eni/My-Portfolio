@@ -12,6 +12,7 @@ function UploadForm({ type }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [projectType, setProjectType] = useState(type || "frontend");
+  const [uploadPassword, setUploadPassword] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,16 +21,23 @@ function UploadForm({ type }) {
     formData.append("title", title);
     formData.append("description", description);
     formData.append("type", projectType);
+    formData.append("uploadPassword", uploadPassword);
 
-    await fetch("http://localhost:5000/upload", {
+    const res = await fetch("http://localhost:5000/upload", {
       method: "POST",
       body: formData,
     });
-    alert("Uploaded!");
-    setFile(null);
-    setTitle("");
-    setDescription("");
-    if (!type) setProjectType("frontend");
+    if (res.ok) {
+      alert("Uploaded!");
+      setFile(null);
+      setTitle("");
+      setDescription("");
+      setUploadPassword("");
+      if (!type) setProjectType("frontend");
+    } else {
+      const data = await res.json();
+      alert(data.error || "Upload failed");
+    }
   };
 
   return (
@@ -89,6 +97,18 @@ function UploadForm({ type }) {
         <small className="upload-form-note">
           Please upload your project as a <b>.zip</b> file.
         </small>
+      </div>
+      <div className="upload-form-group">
+        <label htmlFor="uploadPassword">Upload Password</label>
+        <input
+          id="uploadPassword"
+          type="password"
+          placeholder="Enter upload password"
+          value={uploadPassword}
+          onChange={(e) => setUploadPassword(e.target.value)}
+          className="upload-form-input"
+          required
+        />
       </div>
       <button type="submit" className="upload-form-btn">
         Upload
