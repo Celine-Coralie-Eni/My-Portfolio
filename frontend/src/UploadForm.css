@@ -30,9 +30,14 @@
   border-radius: 0.7rem;
   border: 1.5px solid #e0e0e0;
   background: #f8f9fa;
-  color: var(--text);
+  color: #222;
   outline: none;
   transition: border 0.2s, box-shadow 0.2s;
+}
+
+.upload-form-input::placeholder {
+  color: #888;
+  opacity: 1;
 }
 
 .upload-form-input:focus {

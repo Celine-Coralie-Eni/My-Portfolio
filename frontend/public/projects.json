@@ -1,0 +1,21 @@
+[
+  {
+    "type": "fullstack",
+    "title": "LinkSphere",
+    "description": "LinkSphere is a full-stack web app for generating and managing short URLs. It features user authentication, secure link storage, and real-time link tracking.",
+    "liveLink": "https://linksphere-frontend-service-1.onrender.com/",
+    "github": "https://github.com/Celine-Coralie-Eni/LinkSphere",
+    "date": "2025-07-08",
+    "tech": [
+      "React (TypeScript)",
+      "Tailwind CSS",
+      "Vite",
+      "Rust (Axum)",
+      "PostgreSQL",
+      "SQLx",
+      "JWT",
+      "Docker"
+    ],
+    "image": "/images/linksphere.png"
+  }
+]
